@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-    int n;
+    int n,c=0;
     cin>>n;
     int *arr = new int[n];
     for(int i=0;i<n;i++)
@@ -21,11 +21,17 @@ int main()
     int key;
     cin>>key;
     for (int i = 0; i < n; i+=2)
-    {
+    {   c++;
         if(arr[i]==key)
         {
-            cout<<"Found at:"<<i+1<<endl;
+            cout<<"Found at:"<<i+1<<" and steps is:"<<c<<endl;
             break;
+        }
+        else{
+            if(key<arr[i]){
+                cout<<"found at:"<<i<<" and steps is:"<<c<<endl;
+                break;
+            }
         }
     }
     
