@@ -8,31 +8,48 @@ key. (Complexity < O(n), where n is the number of elements need to be scanned fo
 */
 
 #include<iostream>
+#include<cmath>
 
 using namespace std;
 
 int main()
 {
-    int n,c=0;
-    cin>>n;
-    int *arr = new int[n];
-    for(int i=0;i<n;i++)
-        cin>>*(arr+i);
-    int key;
-    cin>>key;
-    for (int i = 0; i < n; i+=2)
-    {   c++;
-        if(arr[i]==key)
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int A[n];
+        for(int i = 0;i < n;i++)
+            cin>>A[i];
+        int key;
+            cin>>key;
+        int count = 0,flag = 0;
+        int m = sqrt(n);
+        int start = 0;
+        while(A[m] <= key && m < n)
         {
-            cout<<"Found at:"<<i+1<<" and steps is:"<<c<<endl;
-            break;
+            count++;
+            start = m;
+            m += sqrt(n);
+            if(m > n - 1)
+            m = n;
         }
-        else{
-            if(key<arr[i]){
-                cout<<"found at:"<<i<<" and steps is:"<<c<<endl;
+        for(int i = start;i < m;i++)
+        {
+            if(A[i] == key)
+            {
+                count++;
+                flag = 1;
                 break;
             }
+            count++;
         }
+        if(flag == 1)
+            cout<<"Present"<<" "<<count<<endl;
+        else
+            cout<<"Not Present"<<" "<<count<<endl;
     }
-    
-}
+    return 0;
+}   
