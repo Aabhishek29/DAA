@@ -1,5 +1,5 @@
 /*
-print n natural numbers using recursion
+print n even natural numbers using recursion
 */
 
 #include<iostream>
@@ -12,7 +12,8 @@ void naturalNumbers(int n){
     else
     {
         naturalNumbers(--n);
-        cout<<n+1<<" ";
+        if((n+1)%2==0)
+            cout<<n+1<<" "; 
     }
 }
 

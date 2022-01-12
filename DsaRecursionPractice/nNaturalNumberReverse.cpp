@@ -1,5 +1,5 @@
 /*
-print n natural numbers using recursion
+print n natural numbers using recursion in reverse
 */
 
 #include<iostream>
@@ -10,9 +10,8 @@ void naturalNumbers(int n){
     if(n==0)
         return ;
     else
-    {
+    {   cout<<n<<" ";
         naturalNumbers(--n);
-        cout<<n+1<<" ";
     }
 }
 
