@@ -28,3 +28,9 @@ int answer(){
 
     return answer/2;
 }
+
+int main(int argc, char const *argv[])
+{
+    cout<<answer();
+    return 0;
+}

@@ -60,5 +60,6 @@ public class Infosys{
             System.exit(0);
         }
         finFactors(let);
+        sc.close();
     }
 }
